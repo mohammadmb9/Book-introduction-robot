@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ورود / ثبت‌نام - کتاب‌گو</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+    body {
+      background: radial-gradient(circle at center, #6a11cb, #2575fc);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+      overflow: hidden;
+      padding: 1rem;
+    }
+    .form-container {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      color: #fff;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      transform-style: preserve-3d;
+      animation: floatCard 6s ease-in-out infinite;
+      transition: transform 0.6s ease;
+    }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0) rotateY(0deg); }
+      50% { transform: translateY(-15px) rotateY(2deg); }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .input-group input {
+      padding: 0.8rem 1rem;
+      border-radius: 1rem;
+      border: none;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      box-shadow: inset 0 0 10px rgba(255,255,255,0.3);
+      transition: transform 0.3s;
+    }
+    .input-group input:focus {
+      outline: none;
+      transform: scale(1.05);
+    }
+    .btn {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 1rem;
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    .btn:hover {
+      background-color: #ffeb3b;
+      transform: scale(1.05);
+    }
+    .switch-link {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .switch-link a {
+      color: #ffeb3b;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .switch-link a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container" id="form-container">
+    <h2 id="form-title">ورود به کتاب‌گو</h2>
+    <div class="input-group">
+      <input type="text" id="username" placeholder="نام کاربری یا ایمیل">
+      <input type="password" id="password" placeholder="رمز عبور">
+    </div>
+    <button class="btn" onclick="handleAuth()">ورود</button>
+    <div class="switch-link">
+      <span id="toggle-message">حساب کاربری نداری؟</span>
+      <a onclick="toggleForm()" id="toggle-link">ثبت‌نام</a>
+    </div>
+  </div>
+
+  <script>
+    let isLogin = true;
+
+    function toggleForm() {
+      const title = document.getElementById('form-title');
+      const btn = document.querySelector('.btn');
+      const toggleMsg = document.getElementById('toggle-message');
+      const toggleLink = document.getElementById('toggle-link');
+      const form = document.getElementById('form-container');
+
+      isLogin = !isLogin;
+      form.style.transform = 'rotateY(180deg)';
+      setTimeout(() => {
+        title.textContent = isLogin ? 'ورود به کتاب‌گو' : 'ثبت‌نام در کتاب‌گو';
+        btn.textContent = isLogin ? 'ورود' : 'ثبت‌نام';
+        toggleMsg.textContent = isLogin ? 'حساب کاربری نداری؟' : 'حساب کاربری داری؟';
+        toggleLink.textContent = isLogin ? 'ثبت‌نام' : 'ورود';
+        form.style.transform = 'rotateY(0deg)';
+      }, 300);
+    }
+
+    function handleAuth() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      if (isLogin) {
+        alert(`در حال ورود با نام کاربری: ${username}`);
+      } else {
+        alert(`ثبت‌نام انجام شد برای: ${username}`);
+      }
+    }
+  </script>
+</body>
+</html>

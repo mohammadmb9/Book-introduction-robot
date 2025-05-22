@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>کتاب‌گو – چت‌بات معرفی کتاب</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🤖 کتاب‌گو – دستیار معرفی کتاب</h1>
+
+  <div class="main-content">
+    <div class="side-section">
+      <h3>📰 اخبار کتاب‌ها</h3>
+      <div class="item">
+        <img src="./nazari.png" alt="news1">
+        <span>کتاب جدید فاضل نظری منتشر شد</span>
+      </div>
+      <div class="item">
+        <img src="./roman irani.png" alt="news2">
+        <span>رمان ایرانی پرفروش سال شد</span>
+      </div>
+            <div class="item">
+        <img src="./shokr.png" alt="news2">
+        <span>کتاب معجزه شکرگزاری محبوب ترین کتاب سال شناخته شد </span>
+      </div>
+                  <div class="item">
+        <img src="./asar.png" alt="news2">
+        <span>اثر مرکب کتاب منتخب مردمی  </span>
+      </div>
+    </div>
+
+    <div class="chatbox">
+      <div class="chat-log" id="chat-log">
+        <div>📚 سلام! چه نوع کتابی دوست داری؟ (مثلاً روانشناسی، رمان، موفقیت...)</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="موضوع یا علاقه‌ات رو بنویس..." />
+        <button onclick="sendMessage()">ارسال</button>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <h3>📈 محبوب‌ترین کتاب‌ها</h3>
+      <div class="item">
+        <img src="./melat eshgh.png" alt="popular1">
+        <span>ملت عشق</span>
+      </div>
+      <div class="item">
+        <img src="./bi seda.png" alt="popular2">
+        <span>بی‌صدایی سفید</span>
+      </div>
+      <div class="item">
+        <img src="./hitler.png" alt="popular3">
+        <span>نبرد من</span>
+      </div>
+      <div class="item">
+        <img src="./motor.png" alt="popular4">
+        <span>موتور سیکلت</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- دیدگاه کاربران -->
+  <div class="comments">
+    <h3>💬 دیدگاه کاربران</h3>
+    <div class="comment">
+      <img src="https://i.pravatar.cc/40?img=1" alt="avatar" class="comment-avatar" />
+      <div class="comment-content">
+        <strong class="comment-name">مینا</strong>
+        <p>این سایت فوق‌العاده‌ست! کتاب‌هایی که پیشنهاد می‌ده خیلی خوبن.</p>
+      </div>
+    </div>
+    <div class="comment">
+      <img src="https://i.pravatar.cc/40?img=2" alt="avatar" class="comment-avatar" />
+      <div class="comment-content">
+        <strong class="comment-name">علی</strong>
+        <p>کاش بخش نقد و بررسی هم اضافه بشه.</p>
+      </div>
+    </div>
+    <div class="comment">
+      <img src="https://i.pravatar.cc/40?img=3" alt="avatar" class="comment-avatar" />
+      <div class="comment-content">
+        <strong class="comment-name">سمیرا</strong>
+        <p>رابط کاربری جذابه و سرعت پاسخگویی خوبه.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- انتخاب رنگ -->
+  <div class="theme-switcher">
+    <div class="color-btn active" style="background:#8b5cf6" onclick="setTheme('#8b5cf6', this)"></div>
+    <div class="color-btn" style="background:#10b981" onclick="setTheme('#10b981', this)"></div>
+    <div class="color-btn" style="background:#f59e0b" onclick="setTheme('#f59e0b', this)"></div>
+    <div class="color-btn" style="background:#ef4444" onclick="setTheme('#ef4444', this)"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
